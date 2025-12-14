@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <script src="apps.js" defer></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+
 <body>
     <header>
         <h1>Monster Slayer</h1>
@@ -16,16 +18,24 @@
     <div id="game">
         <section id="monster" class="container">
             <h2>Monster Health</h2>
-            <div class="healthbar">
-                <div class="healthbar__value" :style="monsterBarStyles"></div>
+            <div class="battle-station">
+                <div class="avatar avatar--monster"></div>
+                <div class="healthbar">
+                    <div class="healthbar__value" :style="monsterBarStyles"></div>
+                    <span class="healthbar__text">{{ monsterHealth }}%</span>
+                </div>
             </div>
         </section>
 
         <section id="player" class="container">
             <h2>Player Health</h2>
-            <div class="healthbar">
-                <!-- v-bind:style is the same as :style -->
-                <div class="healthbar__value" :style="playerBarStyles"></div>
+            <div class="battle-station">
+                <div class="avatar avatar--player"></div>
+                <div class="healthbar">
+                    <!-- v-bind:style is the same as :style -->
+                    <div class="healthbar__value" :style="playerBarStyles"></div>
+                    <span class="healthbar__text">{{ playerHealth }}%</span>
+                </div>
             </div>
         </section>
 
@@ -47,11 +57,12 @@
         <section id="log" class="container">
             <h2>Battle Log</h2>
             <ul>
-                
+
             </ul>
         </section>
     </div>
 
 
 </body>
+
 </html>
